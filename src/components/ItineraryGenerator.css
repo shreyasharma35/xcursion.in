@@ -1,0 +1,238 @@
+.itinerary-section {
+  background-color: var(--secondary-color);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background accent */
+.itinerary-section::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0) 70%);
+  z-index: 0;
+}
+
+.itinerary-header {
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.inline-icon {
+  color: var(--accent-color);
+  vertical-align: text-top;
+}
+
+.itinerary-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+.itinerary-form-card {
+  padding: 2.5rem;
+  border-radius: 12px;
+}
+
+.itinerary-form-card h3 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.itinerary-form-card .form-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.itinerary-form-card select,
+.itinerary-form-card input[type="text"] {
+  width: 100%;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.itinerary-form-card select {
+  appearance: none;
+}
+
+.itinerary-form-card select:focus,
+.itinerary-form-card input[type="text"]:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.itinerary-form-card select option,
+.itinerary-form-card datalist option {
+  background-color: var(--secondary-color);
+  color: var(--text-primary);
+}
+
+.error-message {
+  margin-top: 1rem;
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  text-align: center;
+  background-color: rgba(255, 107, 107, 0.1);
+  padding: 0.8rem;
+  border-radius: 6px;
+}
+
+/* Result Area */
+.itinerary-result {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.empty-state, .loading-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 3rem;
+  color: var(--text-secondary);
+}
+
+.empty-icon {
+  margin-bottom: 1rem;
+  opacity: 0.5;
+  color: var(--accent-color);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(212, 175, 55, 0.3);
+  border-top-color: var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.result-content {
+  padding: 2.5rem;
+  border-radius: 12px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+/* Markdown Styling */
+.markdown-body {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-body h1:first-child, .markdown-body h2:first-child {
+  margin-top: 0;
+}
+
+.markdown-body h2 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 0.5rem;
+}
+
+.markdown-body p {
+  margin-bottom: 1rem;
+}
+
+.markdown-body ul, .markdown-body ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.markdown-body li {
+  margin-bottom: 0.5rem;
+}
+
+.markdown-body strong {
+  color: var(--text-primary);
+}
+
+/* Highlight the Guardrail warning if the AI triggers it */
+.markdown-body p:first-of-type strong {
+  color: var(--accent-color);
+  display: block;
+  padding: 1rem;
+  background: rgba(212, 175, 55, 0.1);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 0 4px 4px 0;
+  margin-bottom: 2rem;
+}
+
+.result-actions {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+}
+
+.result-actions p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.result-actions .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Custom Scrollbar for the result */
+.result-content::-webkit-scrollbar {
+  width: 8px;
+}
+.result-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.result-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+.result-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 992px) {
+  .itinerary-container {
+    grid-template-columns: 1fr;
+  }
+}
