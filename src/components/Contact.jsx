@@ -9,24 +9,34 @@ const Contact = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending...");
-    const formData = new FormData(event.target);
+    
+    const formElement = event.target;
 
-    // Replace this with your actual Web3Forms Access Key
-    formData.append("access_key", "dfd59e1a-f1cf-416f-909e-6b20fa19c48e");
+    // Key 1: xcursion email
+    const formData1 = new FormData(formElement);
+    formData1.append("access_key", "26654c6c-f115-429f-95ad-621e9bc5c48d");
+
+    // Key 2: travel with us email
+    const formData2 = new FormData(formElement);
+    formData2.append("access_key", "9b66fcae-de6b-4a6b-98a2-63ed7440dfee");
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
-      });
-      const data = await res.json();
+      // Fire both requests at the same time
+      const [res1, res2] = await Promise.all([
+        fetch("https://api.web3forms.com/submit", { method: "POST", body: formData1 }),
+        fetch("https://api.web3forms.com/submit", { method: "POST", body: formData2 })
+      ]);
+      
+      const data1 = await res1.json();
+      const data2 = await res2.json();
 
-      if (data.success) {
+      if (data1.success && data2.success) {
         setResult("Form Submitted Successfully! We will contact you soon.");
         event.target.reset();
       } else {
-        console.log("Error", data);
-        setResult(data.message);
+        console.log("Error sending to Email 1:", data1);
+        console.log("Error sending to Email 2:", data2);
+        setResult(data1.success ? data2.message : data1.message);
       }
     } catch (error) {
       console.log("Error", error);
@@ -69,7 +79,7 @@ const Contact = () => {
                 <div className="info-icon"><Mail /></div>
                 <div>
                   <h4>Email Us</h4>
-                  <p>rishit.anand007@gmail.com</p>
+                  <p>Xcursionin@gmail.com, <br />Travelwithus@xcursionin.in</p>
                 </div>
               </div>
             </div>

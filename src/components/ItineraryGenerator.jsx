@@ -175,8 +175,8 @@ const ItineraryGenerator = () => {
                 icon={MapPin} 
                 value={destination} 
                 setValue={setDestination} 
-                options={["Bali, Indonesia", "Swiss Alps, Switzerland", "Kyoto, Japan", "Ladakh, India", "Goa, India"]}
-                placeholder="e.g. Bali, Swiss Alps, Kyoto..." 
+                options={["Kerala, India", "Golden Triangle, India", "Rajasthan, India", "Bali, Indonesia", "Dubai, UAE", "Bangkok, Thailand", "Goa, India", "Ladakh, India"]}
+                placeholder="e.g. Kerala, Bali, Dubai..." 
               />
 
               <ComboBox 

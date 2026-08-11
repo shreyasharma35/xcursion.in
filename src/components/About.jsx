@@ -24,10 +24,10 @@ const About = () => {
           >
             <h2 className="section-title" style={{textAlign: 'left'}}>Elevating Your Travel Standard.</h2>
             <p className="about-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Discover Your Next Great Adventure. Escape the ordinary and dive into unforgettable experiences. Whether you're seeking the thrill of a mountain trek, the serenity of a hidden beach, or the vibrant culture of a bustling city, XcursionIn brings the world to your fingertips.
             </p>
             <p className="about-text">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Stop dreaming about your perfect getaway and start exploring today. Your journey begins here.
             </p>
             <a href="#services" className="btn-primary" style={{display: 'inline-block', marginTop: '1rem'}}>Discover More</a>
           </motion.div>

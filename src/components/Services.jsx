@@ -5,22 +5,40 @@ import './Services.css';
 const Services = () => {
   const services = [
     {
-      title: "Luxury Hill Resorts",
-      location: "Kasauli, Himachal Pradesh",
-      image: "/images/kasauli_resort_1786303067130.png",
-      desc: "Escape to the tranquil hills with our curated selection of premium resorts. Experience world-class hospitality amidst lush greenery."
+      title: "Room for Your Budget",
+      location: "Comfortable Stays Everywhere",
+      image: "/images/budget_room.png",
+      desc: "Travel doesn't have to break the bank. We handpick cozy, clean, and budget-friendly accommodations that offer incredible value without compromising on experience."
     },
     {
-      title: "Historical Expeditions",
-      location: "Aurangabad, Maharashtra",
-      image: "/images/aurangabad_monument_1786303095573.png",
-      desc: "Journey through time exploring magnificent heritage sites like the Ellora Caves and Chand Minar with our expert guides."
+      title: "Cultural Trips",
+      location: "Immersive Heritage Experiences",
+      image: "/images/cultural_trip.png",
+      desc: "Dive deep into the heart of local traditions. Explore ancient monuments, vibrant festivals, and authentic culinary secrets that connect you to the soul of the destination."
     },
     {
-      title: "Bespoke Hotel Booking",
-      location: "Global Destinations",
-      image: "/images/hero_background_1786303057613.png",
-      desc: "We secure the finest accommodations tailored to your preferences, ensuring a luxurious stay wherever you travel."
+      title: "Adventure Trips",
+      location: "Thrilling Global Expeditions",
+      image: "/images/adventure_trip.png",
+      desc: "Get your adrenaline pumping with our high-octane adventure tours. From high-altitude trekking to white-water rafting, conquer the extraordinary."
+    },
+    {
+      title: "Cycling Trips",
+      location: "Scenic Trails & Routes",
+      image: "/images/cycling_trip.png",
+      desc: "Pedal through breathtaking landscapes at your own pace. Our curated cycling routes offer the perfect blend of fitness, nature, and scenic exploration."
+    },
+    {
+      title: "Wildlife, Safari & Photography",
+      location: "Into the Wild",
+      image: "/images/wildlife_safari.png",
+      desc: "Embark on thrilling safaris led by expert naturalists. Capture stunning photographs of majestic wildlife in their natural, untamed habitats."
+    },
+    {
+      title: "School Trips",
+      location: "Educational & Safe Journeys",
+      image: "/images/school_trip.png",
+      desc: "Inspire young minds with carefully planned educational tours. We prioritize safety, learning, and fun, turning every destination into a vibrant outdoor classroom."
     }
   ];
 
